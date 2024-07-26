@@ -1,12 +1,16 @@
-
-.greet{
-  color: green;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 0px;
+.lst{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #333;
 }
-.alert{
-  color: red;
-  font-size: 1.5em;
-  font-weight: bold;
+.catagory{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    border:10px
+
 }
