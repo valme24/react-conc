@@ -1,11 +1,10 @@
-import Butto  from './assets/Button1';
-import Profile from './assets/profile';
+import MyComponent from "./my-component";
+
 function App() {
 
   return (
   <>
-  <Profile/>
-  <Butto/>
+<MyComponent/>
   </>
 
 
