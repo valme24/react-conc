@@ -6,16 +6,16 @@ function MyComponent(){
         year:2024
     });
      function handleYear(event){
-             setCar({...car,year:event.target.value});
+             setCar(car =>({...car,year:event.target.value}));
         
     }
     function handleBrand(event){
-             setCar({...car,brand:event.target.value});
+             setCar(car =>({...car,brand:event.target.value}));
         
     }
     function handleModle(event){
              
-        setCar({...car,model:event.target.value});
+        setCar(car =>({...car,model:event.target.value}));
 
     }
     return (
