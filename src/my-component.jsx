@@ -1,31 +1,49 @@
 import React,{useState} from 'react';
 function MyComponent(){
-   const [fruit,setFruit]=useState(["banaana","appale","orange"])
-   
-   function handleAddFruite(){
-    const temp = document.getElementById("food-input").value;
-    console.log("fruite is added successfully");
-    document.getElementById("food-input").value =" ";
-    setFruit(f=>([...f,temp]));
+const [cars, setCars] = useState([]);
+const [year,setYear] = useState(new Date().getFullYear());
+const [cmake,setSmake] = useState("");
+const [model,setModel] = useState("");
+function addCar(){
+  const newcar = {year:year,make:cmake,model:model}
+   setCars(c =>([...c,newcar]));
+}
+function removecar(index){
+    setCars(cars.filter((car,i)=>i!==index));
+}
+// function removecar(index){  
+  
+// }
+function handleyear(event){
+  setYear(event.target.value);  
+  event.target.value = new Date().getFullYear();
+}
+function handleMake(event){
+  setSmake(event.target.value);
+  event.target.value="";
+}
+function handleModel(event){
+  setModel(event.target.value);
+  event.target.value="";
+  
+}
 
-   }
-   function handleRemoveFruite(index){
-    setFruit(fruit.filter((_,i)=>i!==index));
-
-
-   }
     return (
         <div>
-           <h1> lis of fruits</h1>
-           <ul>
-                {fruit.map((fruit,index)=>(
-                     <li key={index} onClick={ ()=>handleRemoveFruite(index)}>{fruit}</li>
-                ))};
-           </ul>
-           <input id="food-input" type="text" placeholder="add a fruit"/>
-           <button onClick={handleAddFruite}>add</button>
-           
-           <button onClick={handleRemoveFruite}>remove</button>
+          <h2>
+            list of cars 
+
+          </h2>
+          <ul>
+            {cars.map((car,index)=>{
+              return <li key={index}>{car.year} {car.make} {car.model} <button onClick={()=>removecar(index)}>remove</button></li>
+            })}
+      
+          </ul>
+          <input type="number" value={year} onChange={handleyear} placeholder='eneter year of make'/><br></br>
+          <input type="text" value={cmake} onChange={handleMake}  placeholder='eneter car manufactureer'/> <br />
+          <input type="text" value={model} onChange={handleModel}  placeholder='enter model name '/><br />
+          <button onClick={addCar}>add car</button>
         </div>
     )
 
