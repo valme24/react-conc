@@ -1,9 +1,9 @@
-import MyComponent  from "./my-component";
+import Todo from './Todo';
 function App() {
 
   return (
   <>
-<MyComponent></MyComponent>
+<Todo></Todo>
   </>
 
 
