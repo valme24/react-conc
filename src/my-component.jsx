@@ -1,34 +1,43 @@
 import React,{useState,useEffect} from 'react';
 
 function MyComponent(){
-const [count,setcount]=useState(0);
-const [color,setColor]=useState('red');
+const [width,setWidth]=useState(window.innerWidth);
+const [height,setHeight]=useState(window.innerHeight);
+useEffect(() => {
 
-//useEffect(funtion,array of dependencies);
-useEffect(()=>{
-   document.title=`count:${count} ${color}`;
-},[count,color]);
-const addCount=()=>{
-    setcount(c=>c+1);
-}
-const minuscount=()=>{
-setcount(c=>c-1);
-}
-function changeColor(){
-    if(color==='red'){
-        setColor('green');
-    }else{
-        setColor('red');
-    }
+  window.addEventListener("resize", handleResize);
+
+  console.log("EVENT LISTENER ADDED");
+
+
+
+  return () => {
+
+      window.removeEventListener("resize", handleResize);
+
+      console.log("EVENT LISTENER REMOVED");
+
+  }
+
+}, []);
+
+useEffect(() => {
+
+  document.title = `Size: ${width} x ${height}`;
+
+}, [width, height]);
+
+function handleResize(){
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
 }
 
     return (
         <div>
-         <p style={{color:color}}>count :{count}</p>
-          <button onClick={addCount}>Increment</button>
-          <button onClick={minuscount}>decrement</button>
-          <button onClick={changeColor}>change color</button>
-        </div>
+        <p>Window width {width}</p>
+        <p>window Height {height}</p>
+
+       </div>
     )
 
 }
