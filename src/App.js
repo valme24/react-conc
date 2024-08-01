@@ -1,9 +1,10 @@
+import Clock from "./clock";
 import MyComponent from "./my-component";
 function App() {
 
   return (
   <>
-<MyComponent/>
+<Clock/>
   </>
 
 
