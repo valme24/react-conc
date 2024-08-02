@@ -26,3 +26,6 @@ body{
     font-family: monospace;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.568);
 }
+audio{
+    display: none;
+}

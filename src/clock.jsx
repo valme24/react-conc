@@ -30,6 +30,9 @@ function Clock(){
         <h1>{new Date().getDate()}/{new Date().getUTCMonth()}/{new Date().getUTCFullYear()} </h1>
         <span>{formatTime()}</span>
         </div>
+        <audio id="audio" controls autoplay>
+        <iframe src="https://vanshgoyalkistorage.blob.core.windows.net/music/music.mp3" allow="autoplay" width="800" height="100"></iframe>
+      </audio>
         </div>
     );
 }
