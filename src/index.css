@@ -1,31 +1,4 @@
-body{
-    background-image: url("../public/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin:0;
-
-    background-position: center;
-    display:flex;
-    justify-content: center;
-    min-height: 100vh;
-    
-
-
-
-
-}
-.clock-container{
-
-}
-.clock{
-    font-size: 6rem;
-    color: white;
-    text-align: center;
-    margin-top: 200px;
-    font-family: monospace;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.568);
-}
-audio{
-    display: none;
+.box{
+    border:3px solid;
+    padding: 25px;
 }

@@ -1,9 +1,12 @@
-import Clock from "./clock";
+
+import ComponentA from "./componenta";
 function App() {
 
   return (
   <>
-<Clock/>
+  <ComponentA/>
+  
+
   </>
 
 
